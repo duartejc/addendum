@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Content starts -->
+<div class="matter">
+	<div class="container">
+		{% if clientes.count == 0 %}
+		<div class="no-data">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-warning">
+						<p>
+							Ops!!! Sem dados suficientes para resposta significativa.
+						</p>
+						</p>
+						<p>
+							Precisamos trabalhar...
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<a href="{% url 'pessoas:adicionar_cliente' %}" class="btn btn-info btn-lg">Comece cadastrado clientes</a>
+				</div>
+			</div>
+		</div>
+
+		{% else %}
+		<div class="row">
+			<div class="col-md-8">
+				
+			</div>
+			<div class="col-md-4">
+				<a href="{% url 'pessoas:adicionar_cliente' %}" class="btn btn-primary btn-lg pull-right">Adicionar Cliente</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="widget">
+					<div class="widget-head">
+						<div class="pull-left">
+							<h3>Selecione o(s) cliente(s) para modificar</h3>
+						</div>
+						<div class="widget-icons pull-right">
+							<a href="#" class="wminimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="wclose"><i class="icon-remove"></i></a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="widget-content" style="background-color: #FFF;">
+						<div class="row">
+							<div class="col-md-9" style="padding-right: 0;">
+								<table class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>
+											<input type="checkbox"/>
+											</th>
+											<th>Nome</th>
+											<th>Location</th>
+											<th>Age</th>
+											<th>Education</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente B</a></td>
+											<td>India</td>
+											<td>23</td>
+											<td>B.Tech</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente C</a></td>
+											<td>USA</td>
+											<td>22</td>
+											<td>BE</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente D</a></td>
+											<td>UK</td>
+											<td>43</td>
+											<td>PhD</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox" checked="checked"/>
+											</td>
+											<td><a href="#">Cliente E</a></td>
+											<td>China</td>
+											<td>73</td>
+											<td>PUC</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente F</a></td>
+											<td>Japan</td>
+											<td>43</td>
+											<td>M.Tech</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente G</a></td>
+											<td>India</td>
+											<td>23</td>
+											<td>B.Tech</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox" checked="checked"/>
+											</td>
+											<td><a href="#">Cliente H</a></td>
+											<td>USA</td>
+											<td>22</td>
+											<td>BE</td>
+										</tr>
+										<tr>
+											<td>
+											<input type="checkbox"/>
+											</td>
+											<td><a href="#">Cliente I</a></td>
+											<td>UK</td>
+											<td>43</td>
+											<td>PhD</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-3" style="padding-left: 0;">
+								<div class="panel panel-info" style="border-bottom-color: #FFF; margin-bottom: 0; border-radius: 0;">
+									<div class="panel-heading">
+										<h3 class="panel-title"><i class="icon-filter"></i> Filtro</h3>
+									</div>
+									<div class="panel-body" style="padding-bottom: 10px;">
+										<dl>
+											<dt>
+												Por data de blabla
+											</dt>
+											<dd>
+												<a href="#">Qualquer data</a>
+											</dd>
+											<dd>
+												<a href="#">Hoje</a>
+											</dd>
+											<dd>
+												<a href="#">Ultimos 7 dias</a>
+											</dd>
+											<dd>
+												<a href="#">Este mês</a>
+											</dd>
+											<dd>
+												<a href="#">Este ano</a>
+											</dd>
+											<br />
+											<dt>
+												Euismod
+											</dt>
+											<dd>
+												Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+											</dd>
+											<dd>
+												Donec id elit non mi porta gravida at eget metus.
+											</dd>
+											<dd>
+												Donec id elit non mi porta gravida at.
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="widget-foot" style="padding-top: 2px; padding-left: 2px;">
+						<div class="container">
+							<div class="pull-left">
+								<form class="form-inline">
+									<span class="label label-info">2 selecionados</span>
+									<br />
+									<div class="form-group">
+										<select class="form-control">
+											<option>Ação...</option>
+											<option>Remover clientes selecionados</option>
+											<option>Visualizar detalhes</option>
+										</select>
+									</div>
+									<button type="submit" class="btn">
+										Ir
+									</button>
+								</form>
+							</div>
+
+							<div class="pull-right">
+								<ul class="pagination pull-right">
+									<li>
+										<a href="#">Prev</a>
+									</li>
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">Next</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix"></div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		{% endif %}
+
+	</div>
+
+</div>
+<!-- Content ends -->
+{% endblock %}

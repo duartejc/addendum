@@ -1,0 +1,3 @@
+{{ object.nome }}
+{{ object.cpf }}
+{{ object.rg }}

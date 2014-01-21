@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Content starts -->
+<div class="matter">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="widget">
+					<div class="widget-head">
+						<div class="pull-left">
+							<h3>Visão completa dos clientes selecionados</h3>
+						</div>
+						<div class="widget-icons pull-right">
+							<a href="#" class="wminimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="wclose"><i class="icon-remove"></i></a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="widget-content">
+						<div class="row">
+							<div class="padd">
+								<ul id="myTab" class="nav nav-tabs">
+									<li class="active">
+										<a href="#home" data-toggle="tab"><strong>Fulano de Tal</strong></a>
+									</li>
+									<li>
+										<a href="#profile" data-toggle="tab"><strong>Cliente Top</strong></a>
+									</li>
+									<li>
+										<a href="#cont" data-toggle="tab"><strong>Último Cliente Selecionado</strong></a>
+									</li>
+								</ul>
+								<div id="myTabContent" class="tab-content">
+									<div class="tab-pane fade in active padd" id="home">
+										
+										<!--Painel Dados do Cliente -->
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<i class="icon-user"></i> Dados do Cliente
+											</div>
+											<div class="panel-body">
+														<p>
+															Nome: ...
+														</p>
+														<p>
+															Endereço: ...
+														</p>
+														<p>
+															Telefone: ...
+														</p>
+														<hr />
+														<p>
+															Observações: ...
+														</p>
+											</div>
+										</div>
+										
+										<!-- Painel Processos Relacionados -->
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<i class="icon-list-alt"></i> Processos Relacionados
+											</div>
+											<div class="panel-body">
+												<p>
+													<ul class="list-group">
+														<li class="list-group-item">
+															<a href="#">0001392232/2013</a>
+															<br/>
+															Execução
+														</li>
+														<li class="list-group-item">
+															<a href="#">0401392232/2012</a>
+															<br/>
+															Apelação Bla Bla
+														</li>
+														<li class="list-group-item">
+															<a href="#">0001392299/2012</a>
+															<br/>
+															Divórcio Litigioso
+														</li>
+													</ul>
+												</p>
+											</div>
+										</div>
+										
+										<!-- Painel Tarefas Relacionadas -->
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<i class="icon-tasks"></i> Tarefas Relacionadas
+											</div>
+											<div class="panel-body">
+												<p>
+													<ul class="list-group">
+														<li class="list-group-item">
+															<a href="#">Reunião</a>
+															<br/>
+															11/10/2013 15:00
+														</li>
+														<li class="list-group-item">
+															<a href="#">Audiência</a>
+															<br/>
+															12/10/2013 10:00
+															<br/>
+															Teste audiência
+														</li>
+													</ul>
+												</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="tab-pane fade" id="profile">
+
+									</div>
+									<div class="tab-pane fade" id="cont"></div>
+								</div>
+							</div>
+						</div>
+						<div class="widget-foot">
+							<input type="button" value="Voltar" class="btn btn-info">
+							<div class="clearfix"></div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- Content ends -->
+	{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Content starts -->
+<div class="matter">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Widget -->
+				<div class="widget">
+					<!-- Widget title -->
+					<div class="widget-head">
+						<div class="pull-left">
+							Busca Avançada
+						</div>
+						<div class="widget-icons pull-right">
+							<a href="#" class="wminimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="wclose"><i class="icon-remove"></i></a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="widget-content">
+						<!-- Widget content -->
+						<div class="padd">
+							<div class="support-faq">
+
+								<form role="form">
+									
+									<div class="form-group">
+										<label for="q">Termo da pesquisa</label>
+										<div class="row">
+											<div class="col-lg-4">
+												<input type="text" class="form-control" id="id_q" name="q" placeholder="Informe o conteúdo a ser pesquisado">
+											</div>
+										</div>
+									</div>
+									<label>Pesquisar em</label>
+									<div class="checkbox">
+										<label for="id_models_0">
+											<input id="id_models_0" checked="checked" name="models" type="checkbox" value="pessoas.pessoafisica">
+											Pessoa Física 
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="id_models_1"> 
+											<input id="id_models_1" checked="checked" name="models" type="checkbox" value="pessoas.pessoajuridica">
+											Pessoa Jurídica 
+										</label>
+									</div>
+									<button type="submit" class="btn btn-primary">
+										Pesquisar
+									</button>
+								</form>
+
+								<hr />
+								<div class="clearfix"></div>
+								<!-- Lists -->
+								
+									{% if query %}
+									<div class="panel panel-default">
+									  <div class="panel-heading">Pessoa Física</div>
+										  <div class="panel-body">
+											<ol>
+												{% for result in page.object_list %}
+												<li>
+													<!-- Title. Link title is used for filteration. -->
+													<a href="{{ result.object.get_absolute_url }}">{{ result.object.nome }}</a>
+												</li>
+												{% empty %}
+												<div class="alert alert-warning">
+													<p>
+														Nenhum resultado encontrado.
+													</p>
+												</div>
+												{% endfor %}
+											</ol>									    
+										  </div>
+									</div>
+									<div class="panel panel-default">
+									  <div class="panel-heading">Pessoa Jurídica</div>
+										  <div class="panel-body">
+											<ol>
+												{% for result in page.object_list %}
+												<li>
+													<!-- Title. Link title is used for filteration. -->
+													<a href="{{ result.object.get_absolute_url }}">{{ result.object.nome }}</a>
+												</li>
+												{% empty %}
+												<div class="alert alert-warning">
+													<p>
+														Nenhum resultado encontrado.
+													</p>
+												</div>
+												{% endfor %}
+											</ol>									    
+										  </div>
+									</div>
+
+									{% if page.has_previous or page.has_next %}
+									<div>
+										{% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+										|
+										{% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+									</div>
+									{% endif %}
+									{% else %}
+									{# Show some example queries to run, maybe query syntax, something else? #}
+									{% endif %}
+							</div>
+						</div>
+						<!-- Widget footer -->
+						<div class="widget-foot"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
