@@ -2,8 +2,12 @@
 
 {% block content %}
 <!-- Content starts -->
-<div class="matter">
-	<div class="container">
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+	     Listagem
+        </div>
+        <div class="panel-body">
 		{% if clientes.count == 0 %}
 		<div class="no-data">
 			<div class="row">
@@ -202,7 +206,7 @@
 								</form>
 							</div>
 
-							<div class="pull-right">
+							<div class="pull-left">
 								<ul class="pagination pull-right">
 									<li>
 										<a href="#">Prev</a>
